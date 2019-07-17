@@ -1,0 +1,33 @@
+/// Theme fonts
+/// Defines all fonts in project
+$theme-fonts: (
+  default: (
+    'name': 'Nimbus Sans',
+    'fallback': 'Arial',
+    'type': 'sans-serif',
+  ),
+  default-bold: (
+    'name': 'Nimbus Sans Bold',
+    'fallback': 'Arial Black',
+    'type': 'sans-serif',
+  ),
+  primary: (
+    'name': 'Inconsolata',
+    'fallback': 'Courier',
+    'type': 'monospace',
+  ),
+);
+
+/// Theme color
+/// Defines all colors in project
+$theme-colors: (
+  general: (
+    'default': #1c2a43,
+    'primary': #000000,
+    'secondary': #f22613,
+  ),
+  background: (
+    'default': #ffffff,
+    'primary': #f7f7f7,
+  )
+);

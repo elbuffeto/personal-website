@@ -1,0 +1,19 @@
+/// Returns color defined in $theme-colors map
+/// @author Loriane Buffet
+////
+/// @param {string} $name - name of color
+/// @param {string} $key - name of key in $theme-color
+///
+/// @require {function} map-deep-get - map returns inside map
+/// @require {function} map-has-nested-keys - map returns all `$keys` nested with each others
+///
+/// @see {map} $theme-colors - Defines colors in project
+///
+@function color($name, $key) {
+  @if map-has-nested-keys($theme-colors, $key, $name) {
+    @each $value in $key {
+      $name: map-deep-get($theme-colors, $key, $name);
+    }
+    @return $name;
+  } @error 'Value `#{$name}` with key `#{$key}` doesn\'t exist.';
+}

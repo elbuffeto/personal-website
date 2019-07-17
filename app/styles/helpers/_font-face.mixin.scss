@@ -1,0 +1,9 @@
+/// About font support
+/// @link https://css-tricks.com/snippets/css/using-font-face/
+
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('webfont.woff2') format('woff2'),
+       url('webfont.woff') format('woff'),
+       url('webfont.ttf')  format('truetype'),
+}

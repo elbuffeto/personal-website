@@ -1,0 +1,16 @@
+// Import partials
+// Helpers : mixins and functions
+@import 'helpers/_maps.function';
+@import 'helpers/_font-face.mixin';
+@import 'helpers/_font-name.function';
+@import 'helpers/_color.function';
+
+// Theme : setup for colors, fonts, sizes
+@import 'theme/theme';
+
+// Basic styles
+@import 'base/normalize';
+@import 'base/setup';
+
+// Pages
+@import 'pages/home';

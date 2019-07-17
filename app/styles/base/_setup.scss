@@ -1,0 +1,17 @@
+@font-face()
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  background-color: color('default', background);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,24 @@
+/// Returns font defined in $theme-fonts map
+/// @author Loriane Buffet
+////
+/// @param {string} $name - name of font
+///
+/// @require {function} map-deep-get - map returns inside map
+/// @require {function} map-has-keys - map returns all 'keys' at first level
+///
+/// @see {map} $theme-fonts - Defines fonts in project
+///
+@function font-name($name) {
+  $name: $name;
+  $fallback: '';
+  $type: '';
+
+  @if map-has-keys($theme-fonts, $name) {
+    @each $value in $name {
+      $name: map-deep-get($theme-fonts, $value, 'name');
+      $fallback: map-deep-get($theme-fonts, $value, 'fallback');
+      $type: map-deep-get($theme-fonts, $value, 'type');
+    }
+    @return '#{$name}', unquote($fallback), unquote($type);
+  } @error 'Key `#{$name}` doesn\'t exist.';
+}
