@@ -1,0 +1,21 @@
+/// Function rem
+/// Function that returns rem from px
+/// @group utils
+///
+/// @param {number} $size-value - number of px
+/// @return {number} number in rem
+@function rem($size-value) {
+  @if type-of($size-value) == 'number' and not unitless($size-value) {
+    $store: $size-value;
+
+    $unit: $store * 0 + 1;
+
+    @if $unit != 1px {
+      @error 'Invalid unit (rem function): #{$size-value} --> must be a px unit';
+    }
+
+    $size-value: $store / ($store * 0 + 1);
+  }
+
+  @return ($size-value / 10) * 1rem;
+}

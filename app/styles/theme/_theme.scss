@@ -27,8 +27,12 @@ $theme-fonts: (
 $theme-colors: (
   general: (
     'default': #1c2a43,
-    'primary': #000,
+    'primary': #1e1e1c,
     'secondary': #f22613,
+  ),
+  basic: (
+    'black': #000,
+    'white': #fff
   ),
   background: (
     'default': #fff,
