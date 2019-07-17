@@ -1,9 +1,40 @@
 /// About font support
 /// @link https://css-tricks.com/snippets/css/using-font-face/
 
-@font-face {
-  font-family: 'MyWebFont';
-  src: url('webfont.woff2') format('woff2'),
-       url('webfont.woff') format('woff'),
-       url('webfont.ttf')  format('truetype'),
+$font-path: '../../fonts/';
+
+/// Returns @font-face rules
+/// @author Loriane Buffet
+////
+/// @param {map} $map - map defines project fonts
+///
+/// @see {map} $theme-fonts - Defines fonts in project
+///
+@mixin font-face($map: $theme-fonts) {
+  @each $key, $value in $map {
+    @font-face {
+      font-family: map-get($value, name);
+      src: url($font-path + map-get($value, src) + '/' + map-get($value, src) + '.woff2') format('woff2'),
+           url($font-path + map-get($value, src) + '/' + map-get($value, src) + '.woff') format('woff'),
+           url($font-path + map-get($value, src) + '/' + map-get($value, src) + '.ttf') format('truetype');
+
+      @if map-has-key($value, weight) {
+        font-weight: unquote(map-get($value, weight));
+      } @else {
+        font-weight: normal;
+      }
+
+      @if map-has-key($value, style) {
+        font-weight: unquote(map-get($value, style));
+      } @else {
+        font-style: normal;
+      }
+
+      @if map-has-key($value, variant) {
+        font-weight: unquote(map-get($value, variant));
+      } @else {
+        font-variant: normal;
+      }
+    }
+  }
 }

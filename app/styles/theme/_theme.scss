@@ -5,16 +5,20 @@ $theme-fonts: (
     'name': 'Nimbus Sans',
     'fallback': 'Arial',
     'type': 'sans-serif',
+    'src': 'nimbussans',
   ),
   default-bold: (
     'name': 'Nimbus Sans Bold',
     'fallback': 'Arial Black',
     'type': 'sans-serif',
+    'src': 'nimbussans-bold',
+    'weight': 'bold',
   ),
   primary: (
     'name': 'Inconsolata',
     'fallback': 'Courier',
     'type': 'monospace',
+    'src': 'inconsolata',
   ),
 );
 
@@ -23,11 +27,15 @@ $theme-fonts: (
 $theme-colors: (
   general: (
     'default': #1c2a43,
-    'primary': #000000,
+    'primary': #1e1e1c,
     'secondary': #f22613,
   ),
+  basic: (
+    'black': #000,
+    'white': #fff
+  ),
   background: (
-    'default': #ffffff,
+    'default': #fff,
     'primary': #f7f7f7,
   )
 );
