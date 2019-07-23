@@ -6,8 +6,7 @@
 ///
 /// @require {function} map-deep-get - map returns inside map
 /// @require {function} map-has-nested-keys - map returns all `$keys` nested with each others
-///
-/// @see {map} $theme-colors - Defines colors in project
+/// @require {map} $theme-colors - defines colors in project
 ///
 @function color($name, $key) {
   @if map-has-nested-keys($theme-colors, $key, $name) {
@@ -15,5 +14,7 @@
       $name: map-deep-get($theme-colors, $key, $name);
     }
     @return $name;
-  } @error 'Value `#{$name}` with key `#{$key}` doesn\'t exist.';
+  } @else {
+    @error 'Value `#{$name}` with key `#{$key}` doesn\'t exist.';
+  }
 }

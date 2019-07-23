@@ -1,17 +1,21 @@
 // Import partials
-// Helpers : mixins and functions
-@import 'helpers/_maps.function';
-@import 'helpers/_font-face.mixin';
-@import 'helpers/_font-name.function';
-@import 'helpers/_rem.function';
-@import 'helpers/_color.function';
+// Tools : mixins and functions
+@import 'tools/_maps.function';
+@import 'tools/_font-face.mixin';
+@import 'tools/_font-name.function';
+@import 'tools/_rem.function';
+@import 'tools/_test-unit.function';
+@import 'tools/_strip-unit.function';
+@import 'tools/_breakpoints.mixin';
+@import 'tools/_color.function';
+@import 'tools/_font-size.mixin';
 
 // Theme : setup for colors, fonts, sizes
 @import 'theme/theme';
 
 // Basic styles
-@import 'base/normalize';
-@import 'base/setup';
+@import 'generic/normalize';
+@import 'generic/setup';
 
 // Pages
 @import 'pages/home';

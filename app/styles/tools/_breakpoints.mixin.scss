@@ -1,0 +1,16 @@
+/// Returns media queriy defined in $theme-breakpoints map
+/// @author Loriane Buffet
+////
+/// @param {string} $breakpoint - name of media query
+///
+/// @require {map} $theme-breakpoints - defines media queries in project
+///
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($theme-breakpoints, $breakpoint) {
+    @media (min-width: map-get($theme-breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @error 'Value `#{$breakpoint}` doesn\'t exist.';
+  }
+}
