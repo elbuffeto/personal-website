@@ -13,6 +13,9 @@
 // Theme : setup for colors, fonts, sizes
 @import 'theme/theme';
 
+// Components
+@import 'components/buttons';
+
 // Basic styles
 @import 'generic/normalize';
 @import 'generic/setup';

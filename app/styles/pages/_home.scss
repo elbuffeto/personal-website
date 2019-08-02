@@ -29,9 +29,13 @@
   border-bottom-width: 1px;
 
   &:hover,
-  &:focus,
   &:active {
     border-bottom-color: transparent;
+  }
+
+  &:focus {
+    border-bottom-color: transparent;
+    outline: 1px dashed color('secondary', general);
   }
 
   &:visited {
@@ -47,26 +51,6 @@
       border-bottom: 3px solid color('primary', background);
       color: color('default', general);
     }
-  }
-}
-
-.btn {
-  @include font-size(rem(18), rem(20));
-  background-color: color('white', basic);
-  border: 1px solid color('default', general);
-  color: color('default', general);
-  font-family: font-name('primary');
-  padding: rem(10) rem(15);
-  transition: all .2s ease-in-out;
-
-  span {
-    @include font-size(rem(13), rem(15));
-  }
-
-  &:hover {
-    background-color: color('default', general);
-    border-color: color('default', general);
-    color: color('white', basic);
   }
 }
 

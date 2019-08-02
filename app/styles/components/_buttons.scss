@@ -1,0 +1,47 @@
+// Removes default button styles
+button {
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  margin: 0;
+  padding: rem(10) rem(15);
+  text-align: center;
+  text-decoration: none;
+  transition: color .2s ease-in-out,
+              background-color .2s ease-in-out,
+              border-color .2s ease-in-out;
+}
+
+.btn {
+  @include font-size(rem(18), rem(20));
+  border-style: solid;
+  border-width: 1px;
+  font-family: font-name('primary');
+
+  &__info {
+    @include font-size(rem(13), rem(15));
+  }
+}
+
+/// Generate class buttons from $theme-buttons
+/// @author Loriane Buffet
+////
+/// @require {map} $theme-buttons - defines buttons in project
+///
+@each $name, $styles in $theme-buttons {
+  .btn--#{$name} {
+    @each $state, $values in $styles {
+      @if $state == 'static' {
+        @each $value, $key in $values {
+          #{$value}: $key;
+	      }
+	    } @else {
+        &:#{$state} {
+          @each $value, $key in $values {
+            #{$value}: $key;
+          }
+        }
+      }
+	  }
+	}
+}
