@@ -27,15 +27,7 @@ button {
   }
 
   &__info {
-    font-size: font-size('button-info', min);
-
-    @include breakpoint('beyond-min', font) {
-      font-size: font-size('button-info');
-    }
-
-    @include breakpoint('beyond-max', font) {
-      font-size: font-size('button-info', max);
-    }
+    font-size: .7em;
   }
 }
 
