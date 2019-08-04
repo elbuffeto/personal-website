@@ -23,22 +23,13 @@
   @include breakpoint('beyond-max', font) {
     font-size: font-size('title-2', max);
   }
-}
 
-.text-emphased {
-  font-family: font-name('default');
-  font-size: font-size('lead', min);
-
-  @include breakpoint('beyond-min', font) {
-    font-size: font-size('lead');
-  }
-
-  @include breakpoint('beyond-max', font) {
-    font-size: font-size('lead', max);
+  &--colored {
+    color: color('white', basic);
   }
 }
 
-.text-default {
+.text {
   font-family: font-name('default');
   font-size: font-size('content', min);
   line-height: 1.5;
@@ -54,6 +45,22 @@
   strong {
     font-family: font-name('default-bold');
     font-weight: normal;
+  }
+
+  &--emphased {
+    font-size: font-size('lead', min);
+
+    @include breakpoint('beyond-min', font) {
+      font-size: font-size('lead');
+    }
+
+    @include breakpoint('beyond-max', font) {
+      font-size: font-size('lead', max);
+    }
+  }
+
+  &--colored {
+    color: color('white', basic);
   }
 }
 
@@ -85,9 +92,21 @@
       font-size: .7em;
     }
   }
+
+  &--colored {
+    border-bottom-color: color('white', basic);
+    color: color('white', basic);
+
+    &__info {
+      border-bottom: 3px solid color('default', general);
+      color: color('white', basic);
+      font-size: .7em;
+    }
+  }
 }
 
 // Home - layout styles
+// Header layout
 .header {
   align-items: center;
   display: flex;
@@ -141,6 +160,7 @@
   }
 }
 
+// Main section layout
 .main {
   background-color: color('primary', background);
   padding: rem(30) rem(10) rem(50);
@@ -158,5 +178,26 @@
     &:first-child {
       margin-top: 0;
     }
+  }
+
+  &__text {
+    margin-bottom: rem(20);
+    margin-top: rem(10);
+  }
+}
+
+// Footer layout
+.footer {
+  background-color: color('default', general);
+
+  &__wrapper {
+    margin: 0 auto;
+    max-width: rem(700);
+    padding: rem(30) rem(10) rem(50);
+    text-align: center;
+  }
+
+  &__text {
+    margin: 0;
   }
 }
