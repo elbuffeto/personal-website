@@ -13,13 +13,29 @@ button {
 }
 
 .btn {
-  @include font-size(rem(18), rem(20));
   border-style: solid;
   border-width: 1px;
   font-family: font-name('primary');
+  font-size: font-size('button', min);
+
+  @include breakpoint('beyond-min', font) {
+    font-size: font-size('button');
+  }
+
+  @include breakpoint('beyond-max', font) {
+    font-size: font-size('button', max);
+  }
 
   &__info {
-    @include font-size(rem(13), rem(15));
+    font-size: font-size('button-info', min);
+
+    @include breakpoint('beyond-min', font) {
+      font-size: font-size('button-info');
+    }
+
+    @include breakpoint('beyond-max', font) {
+      font-size: font-size('button-info', max);
+    }
   }
 }
 

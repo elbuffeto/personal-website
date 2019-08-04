@@ -1,22 +1,55 @@
 // Home - font styles
 .title-1 {
-  @include font-size(rem(34), rem(45));
   font-family: font-name('primary');
+  font-size: font-size('title-1', min);
+
+  @include breakpoint('beyond-min', font) {
+    font-size: font-size('title-1');
+  }
+
+  @include breakpoint('beyond-max', font) {
+    font-size: font-size('title-1', max);
+  }
 }
 
 .title-2 {
-  @include font-size(rem(18), rem(20));
   font-family: font-name('default-bold');
+  font-size: font-size('title-2', min);
+
+  @include breakpoint('beyond-min', font) {
+    font-size: font-size('title-2');
+  }
+
+  @include breakpoint('beyond-max', font) {
+    font-size: font-size('title-2', max);
+  }
 }
 
 .text-emphased {
-  @include font-size(rem(18), rem(24));
   font-family: font-name('default');
+  font-size: font-size('lead', min);
+
+  @include breakpoint('beyond-min', font) {
+    font-size: font-size('lead');
+  }
+
+  @include breakpoint('beyond-max', font) {
+    font-size: font-size('lead', max);
+  }
 }
 
 .text-default {
-  @include font-size(rem(15), rem(17));
   font-family: font-name('default');
+  font-size: font-size('content', min);
+  line-height: 1.5;
+
+  @include breakpoint('beyond-min', font) {
+    font-size: font-size('content');
+  }
+
+  @include breakpoint('beyond-max', font) {
+    font-size: font-size('content', max);
+  }
 
   strong {
     font-family: font-name('default-bold');
@@ -47,7 +80,6 @@
     color: color('secondary', general);
 
     &__info {
-      @include font-size(rem(11), rem(13));
       border-bottom: 3px solid color('primary', background);
       color: color('default', general);
     }

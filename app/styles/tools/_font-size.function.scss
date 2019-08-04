@@ -1,0 +1,64 @@
+/// Function font-size
+/// Function that returns a fluid font
+/// @link https://www.madebymike.com.au/writing/fluid-type-calc-examples/
+///
+/// @require {map} $theme-breakpoints-font - defines breakpoints limits for fluid-typo in project
+/// @require {function} test-unit - Test the unit of a number
+/// @require {function} rem - Return rem from px
+///
+/// @param {string} $param [size-min] - minimum font-size (required)
+/// @param {string} $param [size-max] - maximum font-size (required)
+/// @param {string} $param [line-height] - line-height (optionnal)
+///
+@function font-size($name, $key: null) {
+  // Test if key exists
+  @if map-has-key($theme-sizes, $name) {
+    $type: type-of(map-get($theme-sizes, $name));
+    // Test if key has nested keys
+    @if $type == map {
+      $map: map-get($theme-sizes, $name);
+      @if is-key-exist($map, min, max) {
+        $min-size: map-get($map, min);
+        $max-size: map-get($map, max);
+        @if not unitless($min-size) and not unitless($max-size) {
+          @if test-unit(map-get($map, 'min'), rem) and test-unit(map-get($map, 'max'), rem) {
+            @if $key == min {
+              @return map-get($map, min);
+            } @else if $key == max {
+              @return map-get($map, max);
+            } @else if $key == null {
+              $max-width: map-deep-get($theme-breakpoints, font, 'beyond-max');
+              $min-width: map-deep-get($theme-breakpoints, font, 'beyond-min');
+              @return calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{rem(strip-unit($min-width))}) / #{strip-unit($max-width - $min-width) / 10}));
+            } @else {
+              @error 'Argument' $key 'doesn\'t exist for '$name'.';
+            }
+          } @else {
+            @error 'Wrong units for' map-get($map, 'min') 'or' map-get($map, 'max')'. Must be rem.';
+          }
+        } @else {
+          @error 'Missing unit in your font-size.';
+        }
+      } @else {
+        @error 'Missing required values in your map. Keys min and max are needed.';
+      }
+    } @else if $type == number and $key == null {
+      @if not unitless(map-get($theme-sizes, $name)) {
+        @if test-unit(map-get($theme-sizes, $name), rem) {
+          $name: map-get($theme-sizes, $name);
+          @return $name;
+        } @else {
+          @error 'Wrong units for' map-get($theme-sizes, $name)'. Must be rem.';
+        }
+      } @else {
+        @error 'Missing unit in your font-size.';
+      }
+    } @else if $type == number and $key != null {
+      @error 'Argument' $key 'doesn\'t exist for '$name'.';
+    } @else {
+      @error 'This map must contain only numbers.';
+    }
+  } @else {
+    @error 'Value `#{$name}` doesn\'t exist.';
+  }
+}

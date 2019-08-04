@@ -1,18 +1,16 @@
 /// Theme breakpoints
 /// Defines layout breakpoints in project
 $theme-breakpoints: (
-  'beyond-tiny': 320px,
-  'beyond-small': 480px,
-  'beyond-medium': 768px,
-  'beyond-large': 1024px,
-  'beyond-wide': 1440px
-);
-
-/// Theme breakpoints
-/// Defines fluid font breakpoints in project
-$theme-breakpoints-font: (
-  'min': 360px,
-  'max': 1280px,
+  layout: (
+    'beyond-tiny': 320px,
+    'beyond-small': 480px,
+    'beyond-medium': 768px,
+    'beyond-large': 1024px,
+    'beyond-wide': 1440px),
+  font: (
+    'beyond-min': 360px,
+    'beyond-max': 1280px,
+  )
 );
 
 /// Theme fonts
@@ -79,6 +77,10 @@ $theme-sizes: (
   button: (
     'min': rem(18),
     'max': rem(20),
+  ),
+  button-info: (
+    'min': rem(13),
+    'max': rem(15),
   )
 );
 
