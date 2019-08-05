@@ -1,0 +1,29 @@
+.link {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  text-decoration: none;
+  transition: border-bottom .2s ease-in-out;
+
+  &:hover,
+  &:active {
+    border-bottom-color: transparent;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    border-bottom-color: transparent;
+    outline-style: dashed;
+    outline-width: 1px;
+  }
+
+  &:visited {
+    border-bottom-style: dashed;
+  }
+
+  &__info {
+    font-size: .7em;
+  }
+}

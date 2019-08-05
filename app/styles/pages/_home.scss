@@ -1,4 +1,22 @@
 // Home - font styles
+$home: (
+  title-1: (
+    font-family: font-name('primary'),
+    font-size: font-size('title-1', min),
+    breakpoint: (
+      'beyond-min': (
+        font-size: font-size('title-1'),
+      ),
+      'beyond-max': (
+        font-size: font-size('title-1', max),
+      )
+    ),
+  ),
+);
+
+// To generate class from the map
+//@include map-to-class($home);
+
 .title-1 {
   font-family: font-name('primary');
   font-size: font-size('title-1', min);
@@ -32,7 +50,7 @@
 .text {
   font-family: font-name('default');
   font-size: font-size('content', min);
-  line-height: 1.5;
+  line-height: 1.6;
 
   @include breakpoint('beyond-min', font) {
     font-size: font-size('content');
@@ -65,21 +83,8 @@
 }
 
 .link {
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-
-  &:hover,
-  &:active {
-    border-bottom-color: transparent;
-  }
-
   &:focus {
-    border-bottom-color: transparent;
-    outline: 1px dashed color('secondary', general);
-  }
-
-  &:visited {
-    border-bottom-style: dashed;
+    outline-color: color('secondary', general);
   }
 
   &--default {
@@ -89,7 +94,6 @@
     &__info {
       border-bottom: 3px solid color('primary', background);
       color: color('default', general);
-      font-size: .7em;
     }
   }
 
@@ -100,7 +104,6 @@
     &__info {
       border-bottom: 3px solid color('default', general);
       color: color('white', basic);
-      font-size: .7em;
     }
   }
 }
@@ -122,6 +125,10 @@
 
     @include breakpoint(beyond-medium) {
       width: rem(245);
+    }
+
+    @media (orientation: landscape) and (max-width: 768px) {
+      width: rem(100);
     }
   }
 
@@ -157,13 +164,22 @@
     left: auto;
     position: absolute;
     right: auto;
+
+    @media (orientation: landscape) and (max-width: 768px) {
+      margin-top: rem(20);
+      position: static;
+    }
   }
 }
 
 // Main section layout
 .main {
   background-color: color('primary', background);
-  padding: rem(30) rem(10) rem(50);
+  padding: rem(30) rem(10);
+
+  @include breakpoint('beyond-medium') {
+    padding: rem(50) rem(10);
+  }
 
   > * {
     margin-left: auto;

@@ -42,16 +42,6 @@ input[type="submit"] {
   }
 }
 
-a {
-  border-bottom: 1px solid color('default', general);
-  text-decoration: none;
-  transition: border-bottom .2s ease-in-out;
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-
 p {
   margin: 1rem 0;
 }
