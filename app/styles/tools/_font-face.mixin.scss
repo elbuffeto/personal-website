@@ -8,7 +8,7 @@ $font-path: '../../fonts/';
 ////
 /// @param {map} $map - map defines project fonts
 ///
-/// @see {map} $theme-fonts - Defines fonts in project
+/// @require {map} $theme-fonts - defines fonts in project
 ///
 @mixin font-face($map: $theme-fonts) {
   @each $key, $value in $map {

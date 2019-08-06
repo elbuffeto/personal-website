@@ -7,46 +7,45 @@
 </head>
 
 <body>
-  <header>
-    <img src="images/velo.svg" alt="">
+  <header
+    class="header"
+    role="banner">
+    <img
+      class="header__logo"
+      src="images/velo.svg"
+      alt="">
 
-    <h1>loriane buffet</h1>
+    <h1 class="header__title title-1">loriane buffet</h1>
 
-    <p>Je suis intégratrice web, j'interprète et transforme des maquettes en code HTML et CSS.</p>
+    <p class="header__info text text--emphased">Je suis intégratrice web, j'interprète et transforme des maquettes en code HTML et CSS.</p>
 
-    <ul>
-      <li>
-        <a href="">Cv</a>
-      </li>
-
-      <li>
-        <a href="">Email</a>
-      </li>
-
-      <li>
-        <a href="">Github</a>
-      </li>
-
-      <li>
-        <a href="">Linkedin</a>
-      </li>
-    </ul>
+    <button class="header__btn btn btn--default">Téléchargez mon CV <span class="btn__info">(138ko, PDF)</span></button>
   </header>
 
-  <main>
-    <h2>Concrètement</h2>
+  <main class="main">
+    <h2 class="main__title title-2">Concrètement</h2>
 
-    <p>J'interprète des maquettes graphiques et je les restitue le plus fidèlement possible pour créer un site compatible avec les différents navigateurs et écrans. Je travaille donc en étroite collaboration avec les designers pour comprendre leur intention et l'adapter aux contraintes du développement.</p>
+    <p class="main__text text">J'interprète des maquettes graphiques et je les restitue le plus fidèlement possible pour créer un site compatible avec les différents navigateurs et écrans. Je travaille donc en étroite collaboration avec les designers pour comprendre leur intention et l'adapter aux contraintes du développement.</p>
 
-    <p>J'ai à coeur de produire <strong>un code lisible et maintenable, respectueux des standards et des bonnes pratiques</strong>. Dans cette optique, j'ai passé et obtenu la <a href="#">certification Opquast niveau expert</a>. Je m'intéresse également de près à <strong>l'accessibilité web</strong> et je m'attache à développer des sites utilisables par le plus grand nombre de personnes.</p>
+    <p class="main__text text">J'ai à coeur de produire <strong>un code lisible et maintenable, respectueux des standards et des bonnes pratiques</strong>. Dans cette optique, j'ai passé et obtenu la <a href="https://directory.opquast.com/fr/certificat/HDMFKP/" title="Certificat Opquast de Loriane Buffet" class="link link--default">certification Opquast niveau expert<span class="link__info"> (lien externe)</span></a>. Je m'intéresse également de près à <strong>l'accessibilité web</strong> et je m'attache à développer des sites utilisables par le plus grand nombre de personnes.</p>
 
-    <h2>Dans l'idéal</h2>
+    <p class="main__text text">J'aime booster mon CSS en bidouillant des mixins et des fonctions <strong>SASS</strong>, je sais utiliser <strong>Photoshop, Sketch et Gimp</strong> pour communiquer avec mes amis designers et parfois je m'essaye au <strong>JS</strong> pour animer mes pages.</p>
 
-    <p>J'aime tout particulièrement travailler sur des projets portant des valeurs qui me sont chères telles que l'inclusivité, l'accessibilité, la transparence et la liberté. J'ai aussi envie de m'investir dans des projets autour de l'écologie, de l'égalité femme-homme, de l'engagement citoyen ou encore de l'économie sociale et solidaire.</p>
+    <h2 class="main__title title-2">Dans l'idéal</h2>
 
-    <h2>Et sinon</h2>
+    <p class="main__text text">J'aime tout particulièrement travailler sur des projets portant des valeurs qui me sont chères telles que <strong>l'inclusivité</strong>, <strong>l'accessibilité</strong>, <strong>la transparence</strong> et <strong>la liberté</strong>. J'ai aussi envie de m'investir dans des projets autour de <strong>l'écologie</strong>, de <strong>l'égalité femme-homme</strong>, de <strong>l'engagement citoyen</strong> ou encore de <strong>l'économie sociale et solidaire</strong>.</p>
 
-    <p>Quand je ne code pas, j'adore partir en vadrouille avec mon vélo pour une balade autour de chez moi ou aux quatre coins de la France. J'aime aussi retrouver le contact simple du papier de mes nombreux carnets dans lesquels je crayonne mes escapades cyclistes ou mes recettes de cuisine préférées. </p>
+    <h2 class="main__title title-2">Et sinon</h2>
+
+    <p class="main__text text">Quand je ne code pas, j'adore partir en vadrouille avec mon vélo pour une balade autour de chez moi ou aux quatre coins de la France. J'aime aussi retrouver le contact simple du papier de mes nombreux carnets dans lesquels je crayonne mes escapades cyclistes ou mes recettes de cuisine préférées.</p>
   </main>
+
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <h2 class="footer__title title-2 title-2--colored">Intéressé·e ?</h2>
+
+      <p class="footer__text text text--colored">Vous pouvez <a href="mailto:contact@lorianebuffet.eu" class="link link--colored">me contacter par email</a>, jeter un oeil à <a href="https://github.com/elbuffeto" class="link link--colored">mon code sur Github<span class="link__info"> (lien externe)</span></a> ou consulter <a href="https://www.linkedin.com/in/lorianebuffet/" class="link link--colored">mon profil sur Linkedin<span class="link__info"> (lien externe)</span></a>.</p>
+    </div>
+  </footer>
 </body>
 </html>

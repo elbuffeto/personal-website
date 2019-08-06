@@ -1,3 +1,18 @@
+/// Theme breakpoints
+/// Defines layout breakpoints in project
+$theme-breakpoints: (
+  layout: (
+    'beyond-tiny': 320px,
+    'beyond-small': 480px,
+    'beyond-medium': 768px,
+    'beyond-large': 1024px,
+    'beyond-wide': 1440px),
+  font: (
+    'beyond-min': 360px,
+    'beyond-max': 1280px,
+  )
+);
+
 /// Theme fonts
 /// Defines all fonts in project
 $theme-fonts: (
@@ -22,7 +37,7 @@ $theme-fonts: (
   ),
 );
 
-/// Theme color
+/// Theme colors
 /// Defines all colors in project
 $theme-colors: (
   general: (
@@ -37,5 +52,48 @@ $theme-colors: (
   background: (
     'default': #fff,
     'primary': #f7f7f7,
+  )
+);
+
+/// Theme sizes
+/// Defines all sizes in project
+$theme-sizes: (
+  content: (
+    'min': rem(15),
+    'max': rem(17),
+  ),
+  lead: (
+    'min': rem(18),
+    'max': rem(24),
+  ),
+  title-1: (
+    'min': rem(34),
+    'max': rem(45),
+  ),
+  title-2: (
+    'min': rem(18),
+    'max': rem(20),
+  ),
+  button: (
+    'min': rem(18),
+    'max': rem(20),
+  )
+);
+
+/// Theme buttons
+/// Defines button's styles in project
+/// Others states can be added
+$theme-buttons: (
+  default: (
+    static: (
+      'color': #1c2a43,
+      'background': #fff,
+      'border-color': #1c2a43
+    ),
+    hover: (
+      'color': #fff,
+      'background': #1c2a43,
+      'border-color': #1c2a43
+    ),
   )
 );

@@ -5,8 +5,7 @@
 ///
 /// @require {function} map-deep-get - map returns inside map
 /// @require {function} map-has-keys - map returns all 'keys' at first level
-///
-/// @see {map} $theme-fonts - Defines fonts in project
+/// @require {map} $theme-fonts - defines fonts in project
 ///
 @function font-name($name) {
   $name: $name;
@@ -20,5 +19,7 @@
       $type: map-deep-get($theme-fonts, $value, 'type');
     }
     @return '#{$name}', unquote($fallback), unquote($type);
-  } @error 'Key `#{$name}` doesn\'t exist.';
+  } @else {
+    @error 'Key `#{$name}` doesn\'t exist.';
+  }
 }

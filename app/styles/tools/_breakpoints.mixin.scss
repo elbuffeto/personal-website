@@ -1,0 +1,24 @@
+/// Returns media queriy defined in $theme-breakpoints map
+/// @author Loriane Buffet
+////
+/// @param {string} $breakpoint - name of media query
+///
+/// @require {map} $theme-breakpoints - defines media queries in project
+///
+@mixin breakpoint($breakpoint, $key: layout) {
+  @if map-has-nested-keys($theme-breakpoints, $key, $breakpoint) {
+    @if not unitless(map-deep-get($theme-breakpoints, $key, $breakpoint)) {
+      @if test-unit(map-deep-get($theme-breakpoints, $key, $breakpoint), px) {
+        @media screen and (min-width: map-deep-get($theme-breakpoints, $key, $breakpoint)) {
+          @content;
+        }
+      } @else {
+        @error 'Wrong units for' map-deep-get($theme-breakpoints, $key, $breakpoint)'. Must be px.';
+      }
+    } @else {
+      @error 'Missing unit in your breakpoint.'
+    }
+  } @else {
+    @error 'Value `#{$breakpoint}` doesn\'t exist.';
+  }
+}

@@ -1,9 +1,9 @@
 /// Function rem
 /// Function that returns rem from px
-/// @group utils
 ///
 /// @param {number} $size-value - number of px
 /// @return {number} number in rem
+///
 @function rem($size-value) {
   @if type-of($size-value) == 'number' and not unitless($size-value) {
     $store: $size-value;

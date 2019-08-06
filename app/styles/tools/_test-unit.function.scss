@@ -1,0 +1,13 @@
+/// Test the unit of a number
+///
+/// @param {Number} $number - Number to test
+/// @param {Number} $unit - Unit to have
+/// @return {Bool}
+///
+@function test-unit($number, $unit) {
+  @if unit($number) == $unit {
+    @return true;
+  } @else {
+    @return false;
+  }
+}

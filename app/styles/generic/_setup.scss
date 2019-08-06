@@ -1,0 +1,55 @@
+@include font-face();
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  background-color: color('default', background);
+  color: color('default', general);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: color('black', basic);
+  color: color('white', basic);
+}
+
+img {
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+svg {
+  max-width: 100%;
+}
+
+button,
+input[type="submit"] {
+  -webkit-appearance: button;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+p {
+  margin: 1rem 0;
+}
+
+ul {
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
