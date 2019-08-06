@@ -1,22 +1,4 @@
 // Home - font styles
-$home: (
-  title-1: (
-    font-family: font-name('primary'),
-    font-size: font-size('title-1', min),
-    breakpoint: (
-      'beyond-min': (
-        font-size: font-size('title-1'),
-      ),
-      'beyond-max': (
-        font-size: font-size('title-1', max),
-      )
-    ),
-  ),
-);
-
-// To generate class from the map
-//@include map-to-class($home);
-
 .title-1 {
   font-family: font-name('primary');
   font-size: font-size('title-1', min);
@@ -100,6 +82,10 @@ $home: (
   &--colored {
     border-bottom-color: color('white', basic);
     color: color('white', basic);
+
+    &:focus {
+      outline-color: color('white', basic);
+    }
 
     &__info {
       border-bottom: 3px solid color('default', general);

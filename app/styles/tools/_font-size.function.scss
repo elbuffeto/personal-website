@@ -6,9 +6,7 @@
 /// @require {function} test-unit - Test the unit of a number
 /// @require {function} rem - Return rem from px
 ///
-/// @param {string} $param [size-min] - minimum font-size (required)
-/// @param {string} $param [size-max] - maximum font-size (required)
-/// @param {string} $param [line-height] - line-height (optionnal)
+/// @param {string} $name - name of size
 ///
 @function font-size($name, $key: null) {
   // Test if key exists
@@ -21,11 +19,11 @@
         $min-size: map-get($map, min);
         $max-size: map-get($map, max);
         @if not unitless($min-size) and not unitless($max-size) {
-          @if test-unit(map-get($map, 'min'), rem) and test-unit(map-get($map, 'max'), rem) {
+          @if test-unit($min-size, rem) and test-unit($max-size, rem) {
             @if $key == min {
-              @return map-get($map, min);
+              @return $min-size;
             } @else if $key == max {
-              @return map-get($map, max);
+              @return $max-size;
             } @else if $key == null {
               $max-width: map-deep-get($theme-breakpoints, font, 'beyond-max');
               $min-width: map-deep-get($theme-breakpoints, font, 'beyond-min');
@@ -34,7 +32,7 @@
               @error 'Argument' $key 'doesn\'t exist for '$name'.';
             }
           } @else {
-            @error 'Wrong units for' map-get($map, 'min') 'or' map-get($map, 'max')'. Must be rem.';
+            @error 'Wrong units for' $min-size 'or' $max-size'. Must be rem.';
           }
         } @else {
           @error 'Missing unit in your font-size.';
