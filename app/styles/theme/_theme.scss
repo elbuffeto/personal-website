@@ -52,6 +52,10 @@ $theme-colors: (
   background: (
     'default': #fff,
     'primary': #f7f7f7,
+  ),
+  state: (
+    'success': #28a745,
+    'error': #dc3545,
   )
 );
 
