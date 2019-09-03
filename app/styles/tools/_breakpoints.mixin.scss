@@ -1,24 +1,28 @@
-/// Returns media queriy defined in $theme-breakpoints map
+/// Returns media queries defined in $theme-breakpoints map
 /// @author Loriane Buffet
 ////
 /// @param {string} $breakpoint - name of media query
 ///
 /// @require {map} $theme-breakpoints - defines media queries in project
+/// @require {function} map-deep-get - map returns inside map
+/// @require {function} map-has-nested-keys - map returns all keys nested with each others
+/// @require {function} test-unit - tests the unit of a number
 ///
 @mixin breakpoint($breakpoint, $key: layout) {
+  $breakpoint: map-deep-get($theme-breakpoints, $key, $breakpoint);
   @if map-has-nested-keys($theme-breakpoints, $key, $breakpoint) {
-    @if not unitless(map-deep-get($theme-breakpoints, $key, $breakpoint)) {
-      @if test-unit(map-deep-get($theme-breakpoints, $key, $breakpoint), px) {
-        @media screen and (min-width: map-deep-get($theme-breakpoints, $key, $breakpoint)) {
+    @if not unitless($breakpoint) {
+      @if test-unit($breakpoint, px) {
+        @media screen and (min-width: $breakpoint) {
           @content;
         }
       } @else {
-        @error 'Wrong units for' map-deep-get($theme-breakpoints, $key, $breakpoint)'. Must be px.';
+        @error 'Wrong units for '#{$breakpoint}'. Must be px.';
       }
     } @else {
       @error 'Missing unit in your breakpoint.'
     }
   } @else {
-    @error 'Value `#{$breakpoint}` doesn\'t exist.';
+    @error 'Value '#{$breakpoint}' doesn\'t exist.';
   }
 }

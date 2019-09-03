@@ -62,9 +62,16 @@ function watch() {
 exports.watch = watch;
 
 // Generate sassdoc file
-function sassdoc() {
-   src(paths.styles.src)
-      .pipe(sassdoc());
+function sassdocs() {
+  var options = {
+    verbose: true,
+    autofill: ['requires', 'content'],
+  };
+  return(
+    gulp
+      .src(paths.styles.src)
+      .pipe(sassdoc(options))
+  )
 }
 
-exports.sassdoc = sassdoc;
+exports.sassdocs = sassdocs;
