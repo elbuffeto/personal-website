@@ -2,8 +2,8 @@
 
 This repository contains my personal resume website. You can find :
 * my resume (PDF format)
-* an about section
-* a contact section
+* an "about" section
+* a "contact" section
 
 ## Getting Started
 
@@ -30,7 +30,7 @@ npm i
 
 ## Authors
 
-* **Loriane Buffet** - *Initial work* - [elbuffeto](https://github.com/elbuffeto)
+* **Loriane Buffet** - [elbuffeto](https://github.com/elbuffeto)
 
 
 ## License

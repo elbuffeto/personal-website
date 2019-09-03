@@ -5,7 +5,7 @@
 /// @param {string} $key - name of key in $theme-color
 ///
 /// @require {function} map-deep-get - map returns inside map
-/// @require {function} map-has-nested-keys - map returns all `$keys` nested with each others
+/// @require {function} map-has-nested-keys - map returns all keys nested with each others
 /// @require {map} $theme-colors - defines colors in project
 ///
 @function color($name, $key) {
@@ -15,6 +15,6 @@
     }
     @return $name;
   } @else {
-    @error 'Value `#{$name}` with key `#{$key}` doesn\'t exist.';
+    @error 'Value '#{$name}' with key' #{$key}' doesn\'t exist.';
   }
 }

@@ -73,8 +73,8 @@
     border-bottom-color: color('secondary', general);
     color: color('secondary', general);
 
-    &__info {
-      border-bottom: 3px solid color('primary', background);
+    span {
+      border-bottom-color: color('primary', background);
       color: color('default', general);
     }
   }
@@ -87,8 +87,8 @@
       outline-color: color('white', basic);
     }
 
-    &__info {
-      border-bottom: 3px solid color('default', general);
+    span {
+      border-bottom-color: color('default', general);
       color: color('white', basic);
     }
   }
