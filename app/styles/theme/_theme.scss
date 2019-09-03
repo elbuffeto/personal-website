@@ -1,4 +1,5 @@
 /// Theme breakpoints
+///
 /// Defines layout breakpoints in project
 $theme-breakpoints: (
   layout: (
@@ -14,6 +15,7 @@ $theme-breakpoints: (
 );
 
 /// Theme fonts
+///
 /// Defines all fonts in project
 $theme-fonts: (
   default: (
@@ -38,6 +40,7 @@ $theme-fonts: (
 );
 
 /// Theme colors
+///
 /// Defines all colors in project
 $theme-colors: (
   general: (
@@ -52,10 +55,15 @@ $theme-colors: (
   background: (
     'default': #fff,
     'primary': #f7f7f7,
+  ),
+  state: (
+    'success': #28a745,
+    'error': #dc3545,
   )
 );
 
 /// Theme sizes
+///
 /// Defines all sizes in project
 $theme-sizes: (
   content: (
@@ -81,14 +89,16 @@ $theme-sizes: (
 );
 
 /// Theme buttons
+///
 /// Defines button's styles in project
+///
 /// Others states can be added
 $theme-buttons: (
   default: (
     static: (
       'color': #1c2a43,
       'background': #fff,
-      'border-color': #1c2a43
+      'border-color': #1c2a43,
     ),
     hover: (
       'color': #fff,

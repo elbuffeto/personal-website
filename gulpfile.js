@@ -1,10 +1,11 @@
 // Gulp modules
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var postcss = require("gulp-postcss");
-var autoprefixer = require("autoprefixer");
-var cssnano = require("cssnano");
-var browserSync = require("browser-sync").create();
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var cssnano = require('cssnano');
+var browserSync = require('browser-sync').create();
+var sassdoc = require('sassdoc');
 
 // Paths
 var paths = {
@@ -37,7 +38,7 @@ function style() {
   );
 }
 
-// This allows you to run it from the commandline using $ gulp sass
+// This allows you to run it from the commandline using $ gulp style
 exports.style = style;
 
 // To reload the page
@@ -58,4 +59,19 @@ function watch() {
   gulp.watch(paths.html.src, reload);
 }
 
-exports.watch = watch
+exports.watch = watch;
+
+// Generate sassdoc file
+function sassdocs() {
+  var options = {
+    verbose: true,
+    autofill: ['requires', 'content'],
+  };
+  return(
+    gulp
+      .src(paths.styles.src)
+      .pipe(sassdoc(options))
+  )
+}
+
+exports.sassdocs = sassdocs;

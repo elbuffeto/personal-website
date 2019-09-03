@@ -23,7 +23,10 @@
     border-bottom-style: dashed;
   }
 
-  &__info {
+  span {
     font-size: .8em;
+    border-bottom-style: inherit;
+    border-bottom-width: inherit;
+    padding-bottom: 1px;
   }
 }

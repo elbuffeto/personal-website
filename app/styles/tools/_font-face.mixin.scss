@@ -1,17 +1,15 @@
-/// About font support
-/// @link https://css-tricks.com/snippets/css/using-font-face/
-
-$font-path: '../../fonts/';
-
 /// Returns @font-face rules
 /// @author Loriane Buffet
-////
-/// @param {map} $map - map defines project fonts
+///
+/// @link https://css-tricks.com/snippets/css/using-font-face/
+///
+/// @param {map} $map - defines project fonts
 ///
 /// @require {map} $theme-fonts - defines fonts in project
 ///
 @mixin font-face($map: $theme-fonts) {
   @each $key, $value in $map {
+    $font-path: '../../fonts/';
     @font-face {
       font-family: map-get($value, name);
       src: url($font-path + map-get($value, src) + '/' + map-get($value, src) + '.woff2') format('woff2'),

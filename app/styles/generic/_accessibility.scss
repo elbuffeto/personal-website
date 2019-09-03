@@ -1,0 +1,6 @@
+// To prevent screen reader to restitute src attribute
+img {
+  &:not([alt]) {
+    border: 5px solid color('error', state);
+  }
+}

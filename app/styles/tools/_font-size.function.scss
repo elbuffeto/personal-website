@@ -1,10 +1,12 @@
-/// Function font-size
-/// Function that returns a fluid font
+/// Returns a fluid font
 /// @link https://www.madebymike.com.au/writing/fluid-type-calc-examples/
 ///
-/// @require {map} $theme-breakpoints-font - defines breakpoints limits for fluid-typo in project
-/// @require {function} test-unit - Test the unit of a number
-/// @require {function} rem - Return rem from px
+/// @require {map} $theme-breakpoints - defines breakpoints limits for fluid-typo in project
+/// @require {map} $theme-sizes - defines sizes in project
+/// @require {function} map-deep-get - fetches nested keys
+/// @require {function} test-unit - tests the unit of a number
+/// @require {function} rem - returns rem from px
+/// @require {function} strip-unit - removes the unit of a length
 ///
 /// @param {string} $name - name of size
 ///
