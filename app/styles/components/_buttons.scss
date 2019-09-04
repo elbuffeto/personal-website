@@ -1,5 +1,6 @@
 // Removes default button styles
-button {
+button,
+.btn {
   cursor: pointer;
   display: inline-block;
   line-height: 1;

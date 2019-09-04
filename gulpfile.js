@@ -64,6 +64,7 @@ exports.watch = watch;
 // Generate sassdoc file
 function sassdocs() {
   var options = {
+    dest: 'app/docs',
     verbose: true,
     autofill: ['requires', 'content'],
   };
