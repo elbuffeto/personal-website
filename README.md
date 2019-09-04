@@ -36,7 +36,7 @@ gulp watch
 You can check the Sassdoc of this project at the following adress :
 
 ```
-http://lorianebuffet.eu/sassdoc/index.html 
+http://lorianebuffet.eu/docs/index.html 
 ```
 
 ## Built With
